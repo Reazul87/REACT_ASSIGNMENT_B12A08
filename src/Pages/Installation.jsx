@@ -61,11 +61,15 @@ const Installation = () => {
       {!sortBySize.length ? (
         <div className="flex flex-col container mx-auto">
           <div className="flex-1 bg-[#a2abb305] py-20">
-            <div className="text-center">
+            <div className="text-center space-y-4">
               <div className="flex justify-center items-center">
-                <img className="h-40" src={appError} alt="App-Error.png" />
+                <img
+                  className="h-24 md:h-40"
+                  src={appError}
+                  alt="App-Error.png"
+                />
               </div>
-              <h2 className="text-4xl font-semibold">
+              <h2 className="text-xl md:text-4xl font-semibold">
                 You did not install any apps
               </h2>
             </div>

@@ -1,14 +1,15 @@
 import { useState } from "react";
 import useApps from "../Hooks/useApps";
 import AppCard from "../Components/AppCard";
+import appError from "../Assets/App-Error.png";
 
 const Apps = () => {
-  const { appStore } = useApps();
+  const { appStore, loading } = useApps();
   const [search, setSearch] = useState("");
 
-  const trim = search.trim().toLocaleLowerCase();
+  const trim = search.trim().toLowerCase();
   const searched = trim
-    ? appStore.filter((app) => app.title.toLocaleLowerCase().includes(trim))
+    ? appStore.filter((app) => app.title.toLowerCase().includes(trim))
     : appStore;
 
   return (
@@ -23,7 +24,7 @@ const Apps = () => {
         <h2 className="font-semibold text-xl md:text-2xl">
           ({searched.length}) Apps Found
         </h2>
-        <label className="input">
+        <label className="input flex items-center gap-2 border rounded-lg px-3 py-2 shadow-sm">
           <svg
             className="h-5 opacity-50"
             xmlns="http://www.w3.org/2000/svg"
@@ -47,14 +48,32 @@ const Apps = () => {
             type="search"
             required
             placeholder="Search Apps"
+            className="outline-none bg-transparent flex-1"
           />
         </label>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5 md:gap-5">
-        {searched.map((app) => (
-          <AppCard key={app.id} app={app}></AppCard>
-        ))}
-      </div>
+      {searched.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5 md:gap-5">
+          {searched.map((app) => (
+            <AppCard key={app.id} app={app} />
+          ))}
+        </div>
+      ) : (
+        <div className="flex flex-col justify-center items-center py-16 gap-5">
+          <div className="flex justify-center items-center">
+            <img className="h-28 md:h-52" src={appError} alt="App-Error.png" />
+          </div>
+          <div className="md:space-y-4 space-y-2.5 text-center">
+            <h2 className="text-xl md:text-3xl font-semibold">
+              OPPS!! APP NOT FOUND
+            </h2>
+            <p className="text-sm md:text-xl text-[#627382] px-2.5">
+              The App you are requesting is not found on our system. please try
+              another apps
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
