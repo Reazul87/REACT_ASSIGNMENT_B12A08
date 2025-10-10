@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import useApps from "../Hooks/useApps";
 import AppCard from "../Components/AppCard";
-import LoadingPage from "../Components/LoadingPage";
-import NotFound from "./NotFound";
+
 const Apps = () => {
-  const { appStore, loading } = useApps();
+  const { appStore } = useApps();
   const [search, setSearch] = useState("");
 
   const trim = search.trim().toLocaleLowerCase();
   const searched = trim
     ? appStore.filter((app) => app.title.toLocaleLowerCase().includes(trim))
     : appStore;
-
-  if (loading) {
-    return <LoadingPage />;
-  }
-  if (searched.length === 0) {
-    return <NotFound />;
-  }
 
   return (
     <div className="container mx-auto py-5 md:py-15">
@@ -60,10 +52,11 @@ const Apps = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5 md:gap-5">
         {searched.map((app) => (
-          <AppCard key={app.id} app={app} />
+          <AppCard key={app.id} app={app}></AppCard>
         ))}
       </div>
     </div>
   );
 };
+
 export default Apps;

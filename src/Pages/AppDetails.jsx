@@ -64,6 +64,7 @@ const AppDetails = () => {
 
   return (
     <div className="flex flex-col gap-4 md:gap-10 py-2.5 md:py-5 container mx-auto">
+      <title>{title}</title>
       <div className="flex flex-col md:flex-row gap-4 md:gap-10 py-4">
         <div className="w-70 mx-auto md:w-80">
           <img

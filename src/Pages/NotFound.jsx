@@ -2,6 +2,7 @@ import appError from "../Assets/App-Error.png";
 const NotFound = () => {
   return (
     <div className="flex flex-col container mx-auto">
+      <title>App Not Found</title>
       <div className="flex-1 bg-[#a2abb305] py-20">
         <div className="container mx-auto text-center">
           <div className="flex justify-center items-center">

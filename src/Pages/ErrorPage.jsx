@@ -6,6 +6,7 @@ import imgError from "../Assets/error-404.png";
 const ErrorPage = () => {
   return (
     <div className="min-h-screen overflow-hidden flex flex-col">
+      <title>Error 404</title>
       <Navbar></Navbar>
       <div className="flex-1 bg-[#e0e0e033] py-20">
         <div className="container mx-auto text-center">

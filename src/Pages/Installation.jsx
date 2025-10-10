@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router";
-import imgRatings from "../Assets/icon-ratings.png"
+import imgRatings from "../Assets/icon-ratings.png";
 import imgDownloads from "../Assets/icon-downloads.png";
 import appError from "../Assets/App-Error.png";
 import { toast } from "react-toastify";
@@ -34,6 +34,7 @@ const Installation = () => {
 
   return (
     <div className="container mx-auto py-5 md:py-15">
+      <title>Installed Apps</title>
       <div className="text-center mb-5 md:mb-10 space-y-2.5">
         <h2 className="font-bold text-2xl md:text-5xl">Your Installed Apps</h2>
         <p className="text-[#627382] text-sm md:text-xl">
@@ -62,11 +63,7 @@ const Installation = () => {
           <div className="flex-1 bg-[#a2abb305] py-20">
             <div className="text-center">
               <div className="flex justify-center items-center">
-                <img
-                  className="h-40"
-                  src={appError}
-                  alt="App-Error.png"
-                />
+                <img className="h-40" src={appError} alt="App-Error.png" />
               </div>
               <h2 className="text-4xl font-semibold">
                 You did not install any apps
