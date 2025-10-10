@@ -1,16 +1,29 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useApps from "../Hooks/useApps";
 import AppCard from "../Components/AppCard";
+import LoadingPage from "../Components/LoadingPage";
 import appError from "../Assets/App-Error.png";
 
 const Apps = () => {
   const { appStore, loading } = useApps();
+  // Hooks are used normally now
   const [search, setSearch] = useState("");
+  const [filteredApps, setFilteredApps] = useState([]);
+  const [isSearching, setIsSearching] = useState(false);
 
-  const trim = search.trim().toLowerCase();
-  const searched = trim
-    ? appStore.filter((app) => app.title.toLowerCase().includes(trim))
-    : appStore;
+  // --- Filtering Logic (Debounced useEffect) ---
+  useEffect(() => {
+    setIsSearching(true);
+    const timer = setTimeout(() => {
+      const query = search.trim().toLowerCase();
+      const result = query
+        ? appStore.filter((app) => app.title.toLowerCase().includes(query))
+        : appStore;
+      setFilteredApps(result);
+      setIsSearching(false);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [search, appStore]);
 
   return (
     <div className="container mx-auto py-5 md:py-15">
@@ -22,9 +35,9 @@ const Apps = () => {
       </div>
       <div className="flex md:flex-row flex-col justify-between items-center py-5 md:px-0 px-2.5 gap-4">
         <h2 className="font-semibold text-xl md:text-2xl">
-          ({searched.length}) Apps Found
+          ({filteredApps.length}) Apps Found
         </h2>
-        <label className="input flex items-center gap-2 border rounded-lg px-3 py-2 shadow-sm">
+        <label className="input">
           <svg
             className="h-5 opacity-50"
             xmlns="http://www.w3.org/2000/svg"
@@ -48,32 +61,30 @@ const Apps = () => {
             type="search"
             required
             placeholder="Search Apps"
-            className="outline-none bg-transparent flex-1"
           />
         </label>
       </div>
-      {searched.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5 md:gap-5">
-          {searched.map((app) => (
-            <AppCard key={app.id} app={app} />
-          ))}
-        </div>
-      ) : (
-        <div className="flex flex-col justify-center items-center py-16 gap-5">
-          <div className="flex justify-center items-center">
-            <img className="h-28 md:h-52" src={appError} alt="App-Error.png" />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2.5 md:gap-5">
+        {loading || isSearching ? (
+          <LoadingPage></LoadingPage>
+        ) : filteredApps.length === 0 ? (
+          <div className="col-span-1 md:col-span-2 lg:col-span-4 flex justify-center items-center flex-col h-screen">
+            <div className="flex-col justify-center items-center space-y-5 flex">
+              <img
+                src={appError}
+                alt="App not found"
+                className="h-30 md:h-80"
+              />
+              <h2 className="text-xl md:text-4xl font-semibold">
+                OOPS!! APP NOT FOUND
+              </h2>
+            </div>
           </div>
-          <div className="md:space-y-4 space-y-2.5 text-center">
-            <h2 className="text-xl md:text-3xl font-semibold">
-              OPPS!! APP NOT FOUND
-            </h2>
-            <p className="text-sm md:text-xl text-[#627382] px-2.5">
-              The App you are requesting is not found on our system. please try
-              another apps
-            </p>
-          </div>
-        </div>
-      )}
+        ) : (
+          filteredApps.map((app) => <AppCard key={app.id} app={app}></AppCard>)
+        )}
+      </div>
+      <div></div>
     </div>
   );
 };
