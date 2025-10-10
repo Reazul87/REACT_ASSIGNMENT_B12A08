@@ -1,6 +1,8 @@
 > ### [HERO.IO](https://hero-io-10.netlify.app/)
 
-> > [CloudFlare](https://hero-io-10.pages.dev/) [Surge](http://hero-io-10.surge.sh/) [Netlify](https://hero-io-10.netlify.app/)
+**[Netlify](https://hero-io-10.netlify.app/)**
+**[CloudFlare](https://hero-io-10.pages.dev/)**
+**[Surge](http://hero-io-10.surge.sh/)**
 
 > This repository contains the front-end source code for the HERO.IO App Manager, a responsive web application designed to showcase, install, manage, and uninstall software applications.
 
