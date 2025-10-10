@@ -1,0 +1,36 @@
+import React from "react";
+import { createBrowserRouter } from "react-router";
+import MainLayout from "../MainLayout/MainLayout";
+import Home from "../Pages/Home";
+import ErrorPage from "../Pages/ErrorPage";
+import Installation from "../Pages/Installation";
+import Apps from "../Pages/Apps";
+import AppDetails from "../Pages/AppDetails";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: MainLayout,
+    errorElement: <ErrorPage></ErrorPage>,
+    children: [
+      {
+        index: true,
+        Component: Home,
+      },
+      {
+        path: "/apps",
+        Component: Apps,
+      },
+      {
+        path: "/app-details/:id",
+        Component: AppDetails,
+      },
+      {
+        path: "/installation",
+        Component: Installation,
+      },
+    ],
+  },
+]);
+
+export default router;

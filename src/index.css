@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import "tailwindcss";
+@plugin "daisyui";
+
+* {
+  font-family: "Inter", sans-serif;
+}
+
+ul a.active{
+  background: linear-gradient(45deg,#632EE3,#9F62F2);
+  background-clip: text;
+  text-decoration: underline #632EE3 2px;
+  text-underline-offset: 4px;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
