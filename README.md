@@ -5,10 +5,9 @@
 ## 🚀 Live Demo
 
 - **[Netlify](https://hero-io-10.netlify.app/)**
-- **[Cloudflare Pages](https://hero-io-10.pages.dev/)**
+- **[Cloudflare](https://hero-io-10.pages.dev/)**
 
-This repository contains the front-end source code for **HERO.IO App Manager** — a responsive web application to browse, install, manage, and uninstall software apps.  
-Built with React + Tailwind CSS. Installed apps are saved persistently using browser **Local Storage**.
+HERO.IO App Manager is a responsive, client-side web app that lets users browse, install, manage, and uninstall software apps in a clean, intuitive interface. Built with React and Tailwind CSS, it uses Local Storage to persist installed apps, supports dynamic sorting, real-time updates, and includes smooth navigation, alerts, and error handling—no backend required.
 
 ## ✨ Core Features
 
