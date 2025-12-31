@@ -1,6 +1,6 @@
 # HERO.IO App Manager
 
-![Overview Of Hero](hero-io-screenshot.png)
+![Overview Of Hero](Hero-io-screenshot.png)
 
 ## 🚀 Live Demo
 - **[Netlify](https://hero-io-10.netlify.app/)**
