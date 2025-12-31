@@ -51,3 +51,48 @@
 > > Sweet Alert : React toast
 
 > > Persistence: Browser Local Storage
+
+
+
+
+
+
+--------
+---
+
+## ⚡ How to Run Locally
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/RazulBR/REACT_ASSIGNMENT_B12A07.git
+   cd REACT_ASSIGNMENT_B12A07
+```
+---
+### 2. Install dependencies
+
+```bash
+npm install
+```
+---
+
+### 3. Start the project
+
+```bash
+npm run dev
+```
+---
+
+### 4. Open in browser
+
+```bash
+Go to http://localhost:5173 (or the port shown in your terminal)
+```
+---
+
+## 🧑‍💻 Author
+
+**MD REAZUL HASAN**
+
+[GitHub Profile](https://github.com/Reazul87)
+
+---
