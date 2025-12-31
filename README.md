@@ -1,74 +1,45 @@
+# HERO.IO App Manager
 
-![Overview Of Hero](Hero-io-screenshort.png)
+![Overview Of Hero](hero-io-screenshot.png)
 
 ## 🚀 Live Demo
 - **[Netlify](https://hero-io-10.netlify.app/)**
-- **[CloudFlare](https://hero-io-10.pages.dev/)**
+- **[Cloudflare Pages](https://hero-io-10.pages.dev/)**
 
+This repository contains the front-end source code for **HERO.IO App Manager** — a responsive web application to browse, install, manage, and uninstall software apps.  
+Built with React + Tailwind CSS. Installed apps are saved persistently using browser **Local Storage**.
 
-> This repository contains the front-end source code for the HERO.IO App Manager, a responsive web application designed to showcase, install, manage, and uninstall software applications.
+## ✨ Core Features
+- **App Installation & Management** — "Install" apps; view all installed ones on a dedicated page (data saved to Local Storage)
+- **Uninstallation** — Remove apps permanently from the installed list (updates UI & storage instantly)
+- **Dynamic Sorting** — Sort installed apps by size (low → high or high → low) with accurate numeric handling
+- **Responsive Design** — Fully mobile/tablet/desktop friendly layout
+- **Navigation & Components** — Clean Navbar + Footer across pages
+- **Error Handling** — Custom 404 page + "App Not Found" handling
+- **Notifications/Alerts** — Toast or sweet alerts for user feedback
 
-> The application is built using React with Tailwind CSS for aesthetic and fully responsive styling. Data persistence for "installed apps" is managed locally using browser Local Storage.
+## 🛠️ Technologies Used
+- React (v18/19) — Functional components, Hooks (useState, useEffect)
+- Tailwind CSS — Utility-first responsive styling
+- Vite — Fast dev server & build tool
+- React Router (assumed) — For multi-page feel (home, install page, etc.)
+- Browser Local Storage — Persistent data without backend
+- React Toastify / SweetAlert2 — User notifications
 
----
-
-> ## ✨ Features
-
-> The HERO.IO App provides the following core functionalities:
-
-> - App Installation & Management:
-
-> > Users can "install" apps, which saves the app data (ID, size, ratings, etc.) to the user's browser storage.
-
-> > The dedicated Installation Page lists all currently installed applications.
-
-> - App Uninstallation:
-
-> > Apps can be permanently removed from the installed list directly from the Installation Page, immediately updating both the UI and local storage.
-
-> - Dynamic Sorting:
-
-> > Users can sort the list of installed apps dynamically by size (low-to-high or high-to-low) via a simple dropdown control. The sorting logic correctly handles numeric conversion for accurate results.
-
-> - Responsive Layout & Navigation:
-
-> > Includes a standard navigation structure (Navbar) and persistent footer component (Footer).
-
-> > The layout is designed to be fully responsive for mobile, tablet, and desktop views.
-
-> - Robust Error Handling:
-
-> > Custom pages for generic 404 routing errors (ErrorPage) and specific "App Not Found" scenarios (NotFound).
-
-
-> ## 🛠️ Technology Stack
-
-> > Framework: React (Functional Components and Hooks)
-
-> > Styling: Tailwind CSS (for utility-first, responsive design)
-
-> > Routing: React Router (NavLink, assumed)
-
-> > State/Data Management: useState, useEffect
-
-> > Sweet Alert : React toast
-
-> > Persistence: Browser Local Storage
-
-
-
-
-
-
---------
----
+## Dependencies
+Main runtime ones (see package.json for full list):
+- react & react-dom
+- tailwindcss (+ daisyui or similar if used)
+- react-router-dom
+- react-toastify or sweetalert2
+Pure client-side project — no server/backend required.
 
 ## ⚡ How to Run Locally
 
-1. **Clone the repository**
+1. **Clone the repository**  
    ```bash
-   git clone https://github.com/RazulBR/REACT_ASSIGNMENT_B12A07.git
-   cd REACT_ASSIGNMENT_B12A07
+   git clone https://github.com/RazulBR/REACT_ASSIGNMENT_B12A08.git 
+   cd REACT_ASSIGNMENT_B12A08
 ```
 ---
 ### 2. Install dependencies
