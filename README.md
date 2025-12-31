@@ -80,3 +80,10 @@ Go to http://localhost:5173 (or the port shown in your terminal)
 [GitHub Profile](https://github.com/Reazul87)
 
 ---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — free to use and modify.
+
+---
+
