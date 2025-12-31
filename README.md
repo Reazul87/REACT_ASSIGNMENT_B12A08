@@ -1,6 +1,6 @@
 # HERO.IO App Manager
 
-![Overview Of Hero](hero-io-screenshort.png)
+![Overview Of Hero](./hero-io-screenshort.png)
 
 ## 🚀 Live Demo
 
