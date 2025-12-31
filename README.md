@@ -1,8 +1,9 @@
 # HERO.IO App Manager
 
-![Overview Of Hero](Hero-io-screenshot.png)
+![Overview Of Hero](hero-io-screenshort.png)
 
 ## 🚀 Live Demo
+
 - **[Netlify](https://hero-io-10.netlify.app/)**
 - **[Cloudflare Pages](https://hero-io-10.pages.dev/)**
 
@@ -10,6 +11,7 @@ This repository contains the front-end source code for **HERO.IO App Manager** �
 Built with React + Tailwind CSS. Installed apps are saved persistently using browser **Local Storage**.
 
 ## ✨ Core Features
+
 - **App Installation & Management** — "Install" apps; view all installed ones on a dedicated page (data saved to Local Storage)
 - **Uninstallation** — Remove apps permanently from the installed list (updates UI & storage instantly)
 - **Dynamic Sorting** — Sort installed apps by size (low → high or high → low) with accurate numeric handling
@@ -19,6 +21,7 @@ Built with React + Tailwind CSS. Installed apps are saved persistently using bro
 - **Notifications/Alerts** — Toast or sweet alerts for user feedback
 
 ## 🛠️ Technologies Used
+
 - React (v18/19) — Functional components, Hooks (useState, useEffect)
 - Tailwind CSS — Utility-first responsive styling
 - Vite — Fast dev server & build tool
@@ -27,26 +30,31 @@ Built with React + Tailwind CSS. Installed apps are saved persistently using bro
 - React Toastify / SweetAlert2 — User notifications
 
 ## Dependencies
+
 Main runtime ones (see package.json for full list):
+
 - react & react-dom
 - tailwindcss (+ daisyui or similar if used)
 - react-router-dom
 - react-toastify or sweetalert2
-Pure client-side project — no server/backend required.
+  Pure client-side project — no server/backend required.
 
 ## ⚡ How to Run Locally
 
-1. **Clone the repository**  
+1. **Clone the repository**
    ```bash
-   git clone https://github.com/RazulBR/REACT_ASSIGNMENT_B12A08.git 
+   git clone https://github.com/RazulBR/REACT_ASSIGNMENT_B12A08.git
    cd REACT_ASSIGNMENT_B12A08
-```
+   ```
+
+````
 ---
 ### 2. Install dependencies
 
 ```bash
 npm install
-```
+````
+
 ---
 
 ### 3. Start the project
@@ -54,6 +62,7 @@ npm install
 ```bash
 npm run dev
 ```
+
 ---
 
 ### 4. Open in browser
@@ -61,6 +70,7 @@ npm run dev
 ```bash
 Go to http://localhost:5173 (or the port shown in your terminal)
 ```
+
 ---
 
 ## 🧑‍💻 Author
